@@ -1,7 +1,7 @@
 const formmodel = require("../model/formmodel");
 async function consultationform(req, res) {
   try {
-    const { name, companyname, email, phone, serviceofinterest, message } =
+    const { name, companyname, email, phone,industry, serviceofinterest, message } =
       req.body;
 
     // Validation
@@ -10,6 +10,7 @@ async function consultationform(req, res) {
       !companyname ||
       !email ||
       !phone ||
+      !industry ||
       !serviceofinterest ||
       !message
     ) {
@@ -28,6 +29,7 @@ if (phone.toString().length < 10) {
       companyname,
       email,
       phone,
+      industry,
       serviceofinterest,
       message,
     });
